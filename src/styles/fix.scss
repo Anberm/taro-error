@@ -1,0 +1,51 @@
+
+.eqlis-list {
+  padding: $spacing-v-lg 0;
+  color: $at-input-label-color;
+  background-color: $color-bg;
+  margin-left: $spacing-h-xl;
+  margin-bottom: 1PX;
+  position: relative;
+
+  &-item {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    &__label {
+      margin-right: $spacing-h-md;
+      width: 172px;
+      font-size: $at-input-font-size;
+      line-height: $line-height-zh;
+      vertical-align: middle;
+      text-align: left;
+
+      &--required {
+        &::before {
+          display: inline-block;
+          margin-right: 8px;
+          color: $color-error;
+          font-size: 28px;
+          font-family: SimSun, sans-serif;
+          line-height: 1;
+          content: "*";
+        }
+      }
+    }
+
+    &__value {
+      flex: 1;
+      display: inline-block;
+      padding-right: $spacing-v-md;
+      color: $at-input-text-color;
+      font-size: $at-input-font-size;
+      line-height: $line-height-zh;
+      vertical-align: middle;
+      @include placeholder($at-input-placeholder-color);
+    }
+
+  }
+}
