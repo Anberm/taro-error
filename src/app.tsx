@@ -14,12 +14,7 @@ import dva from './utils/dva'
 //   require('nerv-devtools')
 // }
 
-const dvaApp = dva.createApp({
-  initialState: {},
-  models: models,
-});
-
-export const eqlisStore = dvaApp.getStore();
+const eqlisStore = dva.eqlisStore;
 
 class App extends Component {
 

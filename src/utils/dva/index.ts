@@ -3,6 +3,7 @@ import { create } from "dva-core";
 import { createLogger } from "redux-logger";
 import createLoading from "dva-loading";
 import createImmer from "dva-immer";
+import models from "@/models";
 
 declare var global: any;
 
@@ -57,10 +58,16 @@ function createApp(opt: Options = defaultOptions) {
   app.dispatch = dispatch;
   return app;
 }
+const dvaApp = createApp({
+  initialState: {},
+  models: models,
+});
+const eqlisStore = dvaApp.getStore();
 
 export default {
   createApp,
   getDispatch() {
     return app.dispatch;
-  }
+  },
+  eqlisStore
 };

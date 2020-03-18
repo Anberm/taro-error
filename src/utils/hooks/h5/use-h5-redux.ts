@@ -1,6 +1,7 @@
+import dva from '@/utils/dva';
 import { useCallback, useEffect, useReducer, useRef } from '@tarojs/taro';
-import { eqlisStore } from '../../../app';
 
+const eqlisStore = dva.eqlisStore;
 const refEquality = (a, b) => a === b
 /**
  * 允许你使用 selector 函数从一个 Redux Store 中获取数据
